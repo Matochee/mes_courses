@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Zone {% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Listes des Zones</h1>
+        <table class="table table-bordered table-striped">
+            <thead class="bg-dark text-white">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nom</th>
+                    <th class="text-center" scope="col">Position</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for zone in zones %}
+            <tr>
+                <th scope="row">{{ zone.id }}</th>
+                <th>{{ zone.nom }}</th>
+                <td class="text-center">{{ zone.position }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+
+{% endblock %}
